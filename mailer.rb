@@ -2,21 +2,29 @@ require 'gmail'
 require 'dotenv'
 require 'json'
 
+#On lance Dotenv qui masquera les informations sensibles en allant les chercher dans .env
 Dotenv.load
 
+#Connexion à Gmail
 gmail = Gmail.connect(ENV['mail'], ENV['password'])
 
+#On va chercher le Json (noms et adresses mails des communes, numéros des départements)
 file = file.read("../db/townhalls.json")
 
+#On crée une string qui ne contendra que les adresses mails des communes
 JSON.parse(file).each do |name| 
   string_mails = string_mails + "#{name['Mails']}, "
 end 
 
+#On retire le dernier ", "
   string_mails = string_mails.chomp(", ")
 
+#Envoi des mails
 gmail.deliver do
+#Destinataires
   to string_mails
   subject "Decouvrez THP"
+#Partie HTML du mail
   html_part do
     content_type 'text/html; charset=UTF-8'
     body "<p>Bonjour,</p>
@@ -28,6 +36,7 @@ gmail.deliver do
 <p>Charles, co-fondateur de The Hacking Project pourra r&eacute;pondre &agrave; toutes vos questions : 06.95.46.60.80</p>"
   end
 
+#Déconnexion
 gmail.logout
 
 end
