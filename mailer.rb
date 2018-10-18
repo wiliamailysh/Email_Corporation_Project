@@ -14,7 +14,7 @@ require 'json'
 #On va chercher le Json (noms et adresses mails des communes, numéros des départements)
         file = file.read("../db/townhalls.json")
 
-#On crée une string qui ne contendra que les adresses mails des communes
+#On crée une string qui ne contiendra que les adresses mails des communes
         JSON.parse(file).each do |name| 
   string_mails = string_mails + "#{name['Mails']}, "
         end 
