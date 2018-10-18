@@ -1,6 +1,9 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pp'
+require 'rubygems'
+require "json"
+
 
 class Scrapper 
 
@@ -35,7 +38,7 @@ class Scrapper
             page = get_url_dept(dept)
             page.css('a.lientxt').each do |link|
                 @name_town << link.text
-                puts link.text
+                link.text
             end
         end
     end
@@ -49,7 +52,7 @@ class Scrapper
                 this_mail = "MAIL ABSENT"
             end
             @mail_town << this_mail
-            puts this_mail
+            this_mail
         end
     end
 
@@ -72,7 +75,7 @@ class Scrapper
             this_town['Handle'] = " "
             @container << this_town
         end
-        pp @container
+        return @container
     end
 
     def perform
@@ -84,5 +87,6 @@ class Scrapper
     end
 end
 
-scrapper = Scrapper.new
-scrapper.perform
+#scrapper = Scrapper.new
+#scrapper.perform
+
