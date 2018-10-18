@@ -12,7 +12,7 @@
  Comment ça marche ?
 
 En lançant app.rb toutes les fonctions, par un habile jeu de classes et de méthodes bien organisées, se lancent : 
-- app.rb appelle le fichier mailer pour envoyer les emails 
+- app.rb appelle le fichier mailer pour envoyer les emails (voir code app.rb)
 - elle même est subdivisée en plusieurs méthodes afin de scrapper, ajouter à la database, retravailler le data pour avoir des adresses email propres, et suivre des mairies sur Twitter. 
 
 ## L'arborescence 
@@ -59,5 +59,5 @@ Le bot twitter a une interface utilisateur depuis le terminal pour lancer la col
 Ce qui donne au final : 
 
 - Une database propre en Json qui contient tous les emails scrapés des communes ainsi que leur nom.
-- Un bot twitter qui collecte les @handles
+- Un bot twitter qui collecte les @handles et les ajoute au Json.
 - une application qui utilise les adresses email recueillies pour envoyer à chaque commune un mail en HTML présentant notre projet + THP avec le numéro de téléphone de Charles D. le cofondateur. 
