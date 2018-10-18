@@ -1,8 +1,7 @@
-#require 'nokogiri'
-#require 'open-uri'
-#require 'pp'
-#require 'rubygems'
-#require "json"
+require 'nokogiri'
+require 'open-uri'
+require 'rubygems'
+
 
 class Scrapper 
 
