@@ -47,7 +47,7 @@ Une fois fois dans le repository, lancer la commande ``:$ bundle install`` pour 
 - Open-Uri
 - Twitter
 
-Hint : vu que vous avez sûrement travaillé sur ce projet, il y a de fortes chances que vous ayez déjà ces gems installés sur votre terminal. 
+Hint : vu que vous avez sûrement travaillé sur ce projet, il y a de fortes chances que vous ayez déjà ces gems installées sur votre terminal. 
 
 ## Miracle Explained 
 
