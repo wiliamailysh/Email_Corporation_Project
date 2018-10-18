@@ -10,6 +10,8 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 <<<<<<< .merge_file_bENf9L
 # gem "rails"
 =======
+gem 'json'
+gem 'nokogiri'
 gem 'gmail'
 gem 'twitter'
 gem 'rainbow'
