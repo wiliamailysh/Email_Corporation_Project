@@ -1,3 +1,4 @@
+require 'json'
 require 'nokogiri'
 require 'open-uri'
 require 'pp'
@@ -12,7 +13,8 @@ class Scrapper
         @dept_numbr = []
         @url_town = []
         @container = []
-        @dept = ["var", "herault", "vaucluse"]
+        @dept = ["martinique", "guadeloupe"]
+        # @dept = ["var", "herault", "vaucluse"]
     end
 
     def get_url_dept(department)
@@ -75,14 +77,32 @@ class Scrapper
         pp @container
     end
 
+    def write_json
+        # File.open("../db/townhalls.JSON", "w") do |this|
+        #     this.write(@container.to_json)
+        # end
+        @container.each do |hash|
+            File.open("townhalls.json","w") do |f|
+                f.write(hash.to_json)
+            end
+        end
+    end
+
+    
+
     def perform
         get_url_town
         get_mail
         get_name
         get_numbr
         create_hash
+        write_json
+        
     end
 end
 
-scrapper = Scrapper.new
-scrapper.perform
+tt = Scrapper.new
+tt.perform
+
+# File.write("../db/townhalls.JSON", @container.to_json)
+
