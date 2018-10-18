@@ -1,4 +1,4 @@
-# $$Le Grand Mailing$$ 
+# Le Grand Mailing 
 
 *L'équipe :* 
 - Hava ***Guerni*** 
@@ -9,7 +9,7 @@
 
 
 # Les fichiers 
- Comment ça marche ?*
+ Comment ça marche ?
 
 En lançant app.rb toutes les fonctions, par un habile jeu de classes et de méthodes bien organisées, se lancent : 
 - app.rb appelle le fichier mailer pour envoyer les emails 
